@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="sample.css">
+    <link rel="icon" href="logo.png">
+    <title>Facebook - Log in or Sign up</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f2f5;
+    position: relative;
+    height: 115vh;
+    overflow-x: hidden;
+}
+#container{
+    display: flex;
+}
+#recent-logins{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 20vw;
+    top: 13vh;
+    margin-right: 30vw;
+}
+#facebook{
+    height: 70px;
+    width: 198px;
+    margin: -20px;
+}
+#recent-logins > #title{
+    font-size:28px;
+    font-weight:bold;
+    line-height: 32px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+#recent-logins > #substitle{
+    color: #606770;
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+#cards{
+    display: flex;
+}
+#card-1,#card-2{
+    position: relative;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+#card-1:hover,#card-2:hover{
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+#card-1-img,#card-2-img{
+    height: 160px;
+    width: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#add-account{
+    color: #166fe5;
+}
+.username{
+    font-size: 18px;
+    line-height: 22px;
+    padding: 12px;
+    text-align: center;
+    color: rgb(75,79,86);
+}
+#cancel{
+    position: absolute;
+    left: 8px;
+    color: white;
+    top: 5px;
+    border-radius: 20px;
+    text-align: center;
+    width: 20px;
+    background-color: rgb(63,62,62);
+    opacity: 0.5;
+}
+#card-1:hover #cancel{
+    background-color: white;
+    opacity: 1.0;
+    color: rgb(184,193,193);
+    height: 25px;
+    width: 25px;
+    line-height: 22px;
+    top: -5px;
+    left: -5px;
+    font-size: 25px;
+    transition: 0.3s;
+}
+#login{
+    position: relative;
+    background-color: #ffffff;
+    height: 350px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    top: 18vh;
+    justify-content: flex-start;
+    padding: 10px 10px 20px 10px;
+    align-items: center;
+    box-shadow: 0 5px 5px 3px gainsboro;
+}
+#login > a{
+    margin: 18px 0;
+    text-decoration: none;
+    font-size: 15px;
+    color: #1877f2;
+}
+#login > a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+hr{
+    width: 95%;
+    height: 0.1%;
+    background-color: rgb(194,193,193);
+    border: none;
+}
+#login > input[type=email],#login>input[type=password]{
+    height: 35%;
+    margin: 8px 0;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 95%;
+    border: 1.5px solid #eeeff0;
+}
+#login > input[type=password]{
+    margin-bottom: 12px;
+}
+#login > input[type=email]:focus,#login > input[type=password]:focus{
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 0 0 5px #719ece;
+    caret-color: blue;
+}
+#login-button{
+    background-color: #1877f2;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    height: 120px;
+    font-weight: bold;
+    width: 95%;
+}
+#login-button:hover{
+    background-color: #166fe5;
+    cursor:pointer;
+}
+#create-new-account{
+    background-color:#42b72a;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    height: 100px;
+    font-weight: bold;
+    width: 60%;
+    margin-top: 20px;
+}
+#create-new-account:hover{
+    background-color: #368420;
+    cursor: pointer;
+}
+p{
+    font-size: 15px;
+    position: absolute;
+    bottom: -55px;
+}
+footer{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding: 20px;
+    color: #a2a8aa;
+    font-size: 12px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    word-spacing: 12px;
+    list-style: 20px;
+    text-decoration: none;
+    
+}
+
+@media screen and (max-width:1114px){
+    #recent-logins{
+        left: 70px;
+        margin-right: 22vw;
+    }
+    #login{
+        right: 30px;
+    }
+}
+@media screen and (max-width:900px) {
+    body{
+        height: 150vh;
+    }
+    #container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #recent-logins{
+        margin-right: 0;
+        align-items: center;
+        left: 0;
+        top: 20px;
+    }
+    #card-1{
+        margin-right: 5px;
+
+    }
+    #card-2{
+        margin-left: 5px;
+        margin-right: 0;
+
+    }
+    #login{
+        text-align: center;
+        left: 0;
+        margin-right: 0;
+        margin-top: -30px;
+        top: 80px;
+   }
+   #recent-logins,#login{
+    position:relative;
+   }
+   footer{
+    position: absolute;
+    padding: 20px;
+    width: 100vw;
+   }
+}
+@media screen and (max-width:670px) {
+    footer{
+        position: relative;
+        top: 100px;
+    }
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="recent-logins">
+            <img id="faceboook" src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg">
+            <div id="title">Recent logins</div>
+            <div id="substitle">Click your picture or add an account.</div>
+            <div id="cards">
+                <div id="card-1">
+                    <div id="cancel">x</div>
+                    <img id="card-1-img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ad6e5b81-f039-42fa-a02a-23688d84f2bc/dfayl81-f4a70350-60be-495e-b940-42b20d5d9a8a.png/v1/fill/w_397,h_400,q_70,strp/gojo_pfp_by_soda_west_by_sodawest_dfayl81-400t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzYwIiwicGF0aCI6IlwvZlwvYWQ2ZTViODEtZjAzOS00MmZhLWEwMmEtMjM2ODhkODRmMmJjXC9kZmF5bDgxLWY0YTcwMzUwLTYwYmUtNDk1ZS1iOTQwLTQyYjIwZDVkOWE4YS5wbmciLCJ3aWR0aCI6Ijw9NzU1In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.yaGDq3BGb-v621Gv7TYTwI8Y-uYIz9mgo14LJ-_hMjM" alt="profile picture">
+                    <div class="username">Gojo-kun</div>
+                </div>
+                <div id="card-2">
+                    <img id="card-2-img" src="data:image/jpeg;base64,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" alt="add account">
+                    <div id="add-account" class="username">Add account</div>
+                </div>
+            </div>
+        </div>
+        <div id="login">
+            
+            <input type="email" placeholder="Email or Phone Number">
+            <input type="password" placeholder="Password">
+            <input type="button" value="Log In"id="login-button">
+            <a href="#">Forgot Password?</a>
+            <hr style="width: 95%;">
+            <input type="button" value="Create New Account" id="create-new-account">
+           
+            <p><strong>Create a Page</strong> for a celebrity, brand or business.</p>
+
+        </div>
+    </div>
+<footer>
+    <div>
+        English (UK)
+        தமிழ்
+        తెలుగు
+        ಕನ್ನಡ
+        اردو   
+        हिन्दी
+        മലയാളം
+        සිංහල
+        ਪੰਜਾਬੀ
+        বাংলা
+        ગુજરાતી
+        <br><br>
+        <hr style="width: 100%;">
+        <br><br>
+        SignUp  Login  Messenger  Facebook Lite  Watch  Places  Games  Marketplace  Meta Pay  Meta Store  Meta Quest  Instagram  Fundraisers  Services  Voting Information Centre  Privacy Policy  Privacy Centre  Groups  About  Create ad  Create Page  Developers  Careers  Cookies  AdChoices  Terms  Help  Contact uploading and non-users
+        <br><br>
+        Meta © 2023
+    </div>
+</footer>
+</body>
+</html>
